@@ -1,0 +1,754 @@
+{
+  "topology": {
+    "layers": {
+      "0": {
+        "name": "Car Dumpers",
+        "machines": [
+          "CD1",
+          "CD2"
+        ],
+        "same_layer_interconnection_prob": 0.0
+      },
+      "1": {
+        "name": "Conveyors - Stage 1",
+        "machines": [
+          "CB1_1",
+          "CB1_2"
+        ],
+        "same_layer_interconnection_prob": 0.3,
+        "double_cap_prob_base": 0.2,
+        "next_layer_connection_to_next_index_prob": 0.0
+      },
+      "2": {
+        "name": "Stackers / Reclaimers",
+        "machines": [
+          "R1",
+          "R2"
+        ],
+        "same_layer_interconnection_prob": 0.0
+      }
+    },
+    "destination": {
+      "name": "Stockpiles",
+      "stacks": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "coverage_strategy": "proportional_split",
+      "adjacent_machine_overlap_prob": 0.45
+    }
+  },
+  "pipeline": {
+    "CD1": [
+      "CB1_1"
+    ],
+    "CD2": [
+      "CB1_2"
+    ],
+    "CB1_1": [
+      "R1"
+    ],
+    "CB1_2": [
+      "R2"
+    ],
+    "R1": [
+      "S01",
+      "S02"
+    ],
+    "R2": [
+      "S03",
+      "S04"
+    ],
+    "S01": [],
+    "S02": [],
+    "S03": [],
+    "S04": []
+  },
+  "routes": {
+    "0": [
+      "CD1",
+      "CB1_1",
+      "R1",
+      "S01"
+    ],
+    "1": [
+      "CD1",
+      "CB1_1",
+      "R1",
+      "S02"
+    ],
+    "2": [
+      "CD2",
+      "CB1_2",
+      "R2",
+      "S03"
+    ],
+    "3": [
+      "CD2",
+      "CB1_2",
+      "R2",
+      "S04"
+    ]
+  },
+  "machines": {
+    "CD1": {
+      "processing_rate": 0.022920194697690126,
+      "double_capacity": false,
+      "served_routes": [
+        0,
+        1
+      ],
+      "setup_times": [
+        [
+          0.0,
+          1800.0,
+          1048575.0,
+          1048575.0
+        ],
+        [
+          1800.0,
+          0.0,
+          1048575.0,
+          1048575.0
+        ],
+        [
+          1048575.0,
+          1048575.0,
+          1048575.0,
+          1048575.0
+        ],
+        [
+          1048575.0,
+          1048575.0,
+          1048575.0,
+          1048575.0
+        ]
+      ],
+      "in_degree": 0
+    },
+    "CD2": {
+      "processing_rate": 0.026020397719460516,
+      "double_capacity": false,
+      "served_routes": [
+        2,
+        3
+      ],
+      "setup_times": [
+        [
+          1048575.0,
+          1048575.0,
+          1048575.0,
+          1048575.0
+        ],
+        [
+          1048575.0,
+          1048575.0,
+          1048575.0,
+          1048575.0
+        ],
+        [
+          1048575.0,
+          1048575.0,
+          0.0,
+          1800.0
+        ],
+        [
+          1048575.0,
+          1048575.0,
+          1800.0,
+          0.0
+        ]
+      ],
+      "in_degree": 0
+    },
+    "CB1_1": {
+      "processing_rate": 0.024036807916728502,
+      "double_capacity": false,
+      "served_routes": [
+        0,
+        1
+      ],
+      "setup_times": [
+        [
+          0,
+          900,
+          1048575,
+          1048575
+        ],
+        [
+          900,
+          0,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ]
+      ],
+      "in_degree": 1
+    },
+    "CB1_2": {
+      "processing_rate": 0.025459312685296852,
+      "double_capacity": true,
+      "served_routes": [
+        2,
+        3
+      ],
+      "setup_times": [
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          0,
+          900
+        ],
+        [
+          1048575,
+          1048575,
+          900,
+          0
+        ]
+      ],
+      "in_degree": 1
+    },
+    "R1": {
+      "processing_rate": 0.01751755649704982,
+      "double_capacity": false,
+      "served_routes": [
+        0,
+        1
+      ],
+      "setup_times": [
+        [
+          0,
+          900,
+          1048575,
+          1048575
+        ],
+        [
+          900,
+          0,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ]
+      ],
+      "in_degree": 1
+    },
+    "R2": {
+      "processing_rate": 0.01889500743195013,
+      "double_capacity": false,
+      "served_routes": [
+        2,
+        3
+      ],
+      "setup_times": [
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          1048575,
+          1048575
+        ],
+        [
+          1048575,
+          1048575,
+          0,
+          900
+        ],
+        [
+          1048575,
+          1048575,
+          900,
+          0
+        ]
+      ],
+      "in_degree": 1
+    }
+  },
+  "stacks": {
+    "S01": {
+      "capacity": 7,
+      "product": "P1",
+      "eligible_routes": [
+        "0"
+      ]
+    },
+    "S02": {
+      "capacity": 7,
+      "product": "P4",
+      "eligible_routes": [
+        "1"
+      ]
+    },
+    "S03": {
+      "capacity": 7,
+      "product": "P5",
+      "eligible_routes": [
+        "2"
+      ]
+    },
+    "S04": {
+      "capacity": 7,
+      "product": "P4",
+      "eligible_routes": [
+        "3"
+      ]
+    }
+  },
+  "lots": {
+    "0": {
+      "arrival_time": 1124.8205552084817,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "1": {
+      "arrival_time": 1177.7574598440292,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "2": {
+      "arrival_time": 1541.793511586326,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "3": {
+      "arrival_time": 1680.2928598376411,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "4": {
+      "arrival_time": 1882.4191700394717,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "5": {
+      "arrival_time": 2197.85553440388,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "6": {
+      "arrival_time": 2555.531179902376,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "7": {
+      "arrival_time": 3609.545920894495,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "8": {
+      "arrival_time": 3948.1021519988744,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "9": {
+      "arrival_time": 3971.371476606048,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "10": {
+      "arrival_time": 4571.346705637512,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "11": {
+      "arrival_time": 4668.619479491006,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "12": {
+      "arrival_time": 5014.068087643536,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "13": {
+      "arrival_time": 5032.587956075176,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "14": {
+      "arrival_time": 5461.060528939292,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "15": {
+      "arrival_time": 5909.436306108381,
+      "wagons": 3,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 158.7720994979452
+      }
+    },
+    "16": {
+      "arrival_time": 5913.344634959386,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "17": {
+      "arrival_time": 7266.737152326096,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "18": {
+      "arrival_time": 7448.385451651686,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "19": {
+      "arrival_time": 7882.02410988816,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "20": {
+      "arrival_time": 8520.590239244242,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "21": {
+      "arrival_time": 9129.888245109029,
+      "wagons": 6,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 342.51352356194633
+      }
+    },
+    "22": {
+      "arrival_time": 10141.294340436098,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "23": {
+      "arrival_time": 10393.857482185555,
+      "wagons": 12,
+      "product": "P4",
+      "eligible_stockpiles": [
+        "S02",
+        "S04"
+      ],
+      "eligible_routes": [
+        1,
+        3
+      ],
+      "processing_times": {
+        "1": 685.0270471238927,
+        "3": 635.0883979917808
+      }
+    },
+    "24": {
+      "arrival_time": 10461.419989562975,
+      "wagons": 12,
+      "product": "P1",
+      "eligible_stockpiles": [
+        "S01"
+      ],
+      "eligible_routes": [
+        0
+      ],
+      "processing_times": {
+        "0": 685.0270471238927
+      }
+    },
+    "25": {
+      "arrival_time": 10689.196023566914,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "26": {
+      "arrival_time": 11179.26458521896,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    },
+    "27": {
+      "arrival_time": 11578.938609105087,
+      "wagons": 12,
+      "product": "P5",
+      "eligible_stockpiles": [
+        "S03"
+      ],
+      "eligible_routes": [
+        2
+      ],
+      "processing_times": {
+        "2": 635.0883979917808
+      }
+    }
+  },
+  "hz": 10800,
+  "maintenance_tasks": {}
+}

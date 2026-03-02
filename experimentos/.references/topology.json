@@ -1,0 +1,84 @@
+{
+    "layers": {
+        "0": {
+            "name": "Car Dumpers",
+            "machines": [
+                "CD1",
+                "CD2",
+                "CD3"
+            ],
+            "same_layer_interconnection_prob": 0.0
+        },
+        "1": {
+            "name": "Conveyors - Stage 1",
+            "machines": [
+                "CB1_1",
+                "CB1_2",
+                "CB1_3"
+            ],
+            "same_layer_interconnection_prob": 0.3,
+            "double_cap_prob_base": 0.2,
+            "next_layer_connection_to_next_index_prob": 0.0
+        },
+        "2": {
+            "name": "Conveyors - Stage 2",
+            "machines": [
+                "CB2_1"
+            ],
+            "same_layer_interconnection_prob": 0.3,
+            "double_cap_prob_base": 0.2,
+            "next_layer_connection_to_next_index_prob": 0.0
+        },
+        "3": {
+            "name": "Conveyors - Stage 3",
+            "machines": [
+                "CB3_1",
+                "CB3_2"
+            ],
+            "same_layer_interconnection_prob": 0.3,
+            "double_cap_prob_base": 0.2,
+            "next_layer_connection_to_next_index_prob": 0.0
+        },
+        "4": {
+            "name": "Stackers / Reclaimers",
+            "machines": [
+                "R1",
+                "R2",
+                "R3",
+                "R4",
+                "R5"
+            ],
+            "same_layer_interconnection_prob": 0.0
+        }
+    },
+    "destination": {
+        "name": "Stockpiles",
+        "stacks": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15",
+            "S16",
+            "S17",
+            "S18",
+            "S19",
+            "S20",
+            "S21",
+            "S22",
+            "S23"
+        ],
+        "coverage_strategy": "proportional_split",
+        "adjacent_machine_overlap_prob": 0.85
+    }
+}
